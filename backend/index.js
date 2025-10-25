@@ -4,6 +4,7 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 
 const UserRoutes = require('./routes/UserRoutes');
+const PetRoutes = require('./routes/PetRoutes');
 
 const cors = require('cors');
 
@@ -19,6 +20,7 @@ app.use(express.static('public'));
 
 // Routes
 app.use('/users', UserRoutes);
+app.use('/pets', PetRoutes);
 
 app.listen(process.env.PORT, () => {
     console.log(`Servidor iniciado na porta ${PORT}`)
